@@ -3,7 +3,7 @@ I'm Taoran_01 from Class 1, Grade 2024, Jinan Zhensheng Senior High School, an o
 
 Today is September 27, 2024. Due to the frequent changes in equipment, I set up this repo as my study space.
 
-Blog: [Algo-X.cn](https://algo-x.cn/)
+Blog: [Algo-X.cn](https://algo-x.cn/)  
 Luogu: [Taoran_01](https://www.luogu.com/user/593907)
 
 ---
