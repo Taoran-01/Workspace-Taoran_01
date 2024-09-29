@@ -70,8 +70,5 @@ signed main() {
 		if (ch=='Q') x=find(x), printf("%d\n", query(rt[x], y));
 		else mer(x, y);
 	}
-	printf("%d | ", tot);
-	for (int i=1; i<=n; ++i) printf("%d ", rt[i]); puts("");
-	for (int i=1; i<=tot; ++i) printf("%d %d %d\n", t[i].d, t[i].ls, t[i].rs);
 	return 0;
 }

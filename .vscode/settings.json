@@ -12,7 +12,7 @@
 	"terminal.integrated.defaultProfile.windows": "Command Prompt",
 	"terminal.integrated.enableMultiLinePasteWarning": "never",
 	// "C_Cpp.default.compilerPath": "C:\\mingw64\\bin\\g++.exe",
-	"C_Cpp.default.cppStandard": "gnu++17",
+	"C_Cpp.default.cppStandard": "gnu++14",
 	"code-runner.ignoreSelection": true,
 	"code-runner.runInTerminal": true,
 	"code-runner.saveFileBeforeRun": true,
