@@ -25,6 +25,11 @@ struct Matrix {
 	int n, m; ll d[MN][MM];
 	ll* operator[](int x) {return d[x];}
 	Matrix() {n=0, m=0, memset(d, 0, sizeof(d));}
+	void output() {
+		for (int i=1; i<=n; ++i) for (int j=1; j<=m; ++j) {
+			printf("%d%c", d[i][j], (j==m)?'\n':' ');
+		} puts("");
+	}
 };
 
 // ll smul(ll a, ll b) {

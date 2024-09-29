@@ -61,3 +61,40 @@ SPFA最短路，调了 $7$ 遍没调过去。
 int u=q.front(); q.pop(); // 原来的代码
 int u=q.front(); q.pop(), inq[u]=0; // 正确代码
 ```
+
+---
+### 0x08 徒劳无功
+线段树，写了 `build()`，但最后忘记调用。
+```cpp
+signed main() {
+	// freopen("P4513.in", "r", stdin);
+	n=read(), m=read();
+	for (int i=1; i<=n; ++i) bs[i]=read();
+	// 这里
+	while (m--) {
+		int opt=read(), x=read(), y=read(), k=0;
+		if (opt==1) {if (x>y) swap(x, y); printf("%d\n", query(x, y));}
+		if (opt==2) modify(x, y);
+	}
+	return 0;
+}
+
+```
+
+没有 `return c;`。
+```cpp
+node operator+(node a, node b) {
+	node c=node();
+	c.lmax=max(a.lmax, a.sum+b.lmax);
+	c.rmax=max(b.rmax, b.sum+a.rmax);
+	if (a.rmax<0&&b.lmax<0) c.pmax=max(a.rmax, b.lmax);
+	else c.pmax=max(a.rmax, 0LL)+max(b.lmax, 0LL);
+	c.pmax=max(c.pmax, max(a.pmax, b.pmax));
+	c.sum=a.sum+b.sum;
+	// 这里
+}
+
+```
+
+---
+### 0x09 百密一疏

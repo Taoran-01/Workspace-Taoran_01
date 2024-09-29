@@ -54,9 +54,9 @@ Matrix d[13]; // d[12]=\prod_{i=0}^11 d[i]
 bool ban[N][13];
 
 signed main() {
-	freopen("c.in", "r", stdin);
+	freopen("P2579.in", "r", stdin);
 	n=read(), m=read(), s=read()+1, t=read()+1, k=read();
-	a.n=a.m=n, d[12].n=d[12].m=n;
+	a.n=a.m=d[12].n=d[12].m=n;
 	while (m--) {int x=read()+1, y=read()+1; a[x][y]=a[y][x]=1;}
 	q=read(); while (q--) {
 		int rnd=read(); for (int i=0; i<rnd; ++i) {

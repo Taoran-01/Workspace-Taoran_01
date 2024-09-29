@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <cstring>
 #include <iostream>
+#include <cassert> //
 using namespace std;
 typedef long long ll;
 
@@ -32,22 +33,23 @@ int insert(int l, int r, int x) {
 	if (x<=mid) t[p].ls=insert(l, mid, x);
 	if (x>mid) t[p].rs=insert(mid+1, r, x);
 	return p;
-}
-int insert(int x) {return insert(1, n, x);}
+} int insert(int x) {return insert(1, n, x);}
 int query(int l, int r, int p, int k) {
+	assert(1<=l&&l<=r&&r<=n);
+	assert(p<=tot);
 	if (k>t[p].d) return -1; if (l==r) return idx[l];
 	if (t[p].ls&&t[t[p].ls].d>=k) return query(l, mid, t[p].ls, k);
 	else return query(mid+1, r, t[p].rs, k-t[t[p].ls].d);
-}
-int query(int p, int k) {query(1, n, p, k);}
+} int query(int p, int k) {query(1, n, p, k);}
 int merge(int l, int r, int px, int py) {
+	assert(1<=l&&l<=r&&r<=n);
+	assert(px<=tot&&py<=tot);
 	if (!px||!py) return px|py;
 	int res=nd(); t[res].d=t[px].d+t[py].d;
 	t[res].ls=merge(l, mid, t[px].ls, t[py].ls);
 	t[res].rs=merge(mid+1, r, t[px].rs, t[py].rs);
 	return res;
-}
-int merge(int px, int py) {return merge(1, n, px, py);}
+} int merge(int px, int py) {return merge(1, n, px, py);}
 #undef mid
 
 void mer(int x, int y) {
@@ -57,7 +59,7 @@ void mer(int x, int y) {
 }
 
 signed main() {
-	// freopen("a.in", "r", stdin);
+	freopen("P3224.in", "r", stdin);
 	n=read(), m=read();
 	for (int i=1; i<=n; ++i) fa[i]=i;
 	for (int i=1; i<=n; ++i) {int x=read(); rt[i]=insert(x), idx[x]=i;}
@@ -68,5 +70,8 @@ signed main() {
 		if (ch=='Q') x=find(x), printf("%d\n", query(rt[x], y));
 		else mer(x, y);
 	}
+	printf("%d | ", tot);
+	for (int i=1; i<=n; ++i) printf("%d ", rt[i]); puts("");
+	for (int i=1; i<=tot; ++i) printf("%d %d %d\n", t[i].d, t[i].ls, t[i].rs);
 	return 0;
 }
