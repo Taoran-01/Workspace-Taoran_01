@@ -98,3 +98,7 @@ node operator+(node a, node b) {
 
 ---
 ### 0x09 百密一疏
+离散化忘记排序。根本原因：压行过度。
+```cpp
+sort(a+1, a+n+1), nt=unique(tmp+1, tmp+nt+1)-(tmp+1);
+```

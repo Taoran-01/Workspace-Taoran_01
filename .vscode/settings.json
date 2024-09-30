@@ -19,6 +19,6 @@
 	"print.editorTitleMenuButtonPreview": false,
 	"print.editorTitleMenuButtonPrint": false,
 	"code-runner.executorMap": {
-		"cpp": "cd $dir && g++ \"$fileName\" -std=c++14 -o \"$fileNameWithoutExt\" && $dir\"$fileNameWithoutExt\"",
+		"cpp": "cd $dir && g++ \"$fileName\" -std=c++14 -o \"$fileNameWithoutExt\" && \"$fileNameWithoutExt\" && del \"$fileNameWithoutExt.exe\"",
 	},
 }
