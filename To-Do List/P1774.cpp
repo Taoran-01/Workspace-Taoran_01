@@ -16,14 +16,9 @@ inline ll read() {
 	return x*f;
 }
 
-#define N 100010
-#define mod 99999997
-typedef pair<int,int> pii;
-#define fi first
-#define se second
-#define mp make_pair
-int n, ans;
-pii a[N]; int d[N];
+#define N 500010
+int n; ll ans;
+int a[N];
 int tmp[N], nt;
 
 template <typename T> struct BIT {
@@ -34,16 +29,12 @@ template <typename T> struct BIT {
 }; BIT<ll> t;
 
 signed main() {
-	freopen("P1966.in", "r", stdin);
+	freopen("P1774_1.in", "r", stdin);
 	n=read();
-	for (int i=1; i<=n; ++i) a[i].fi=read();
-	for (int i=1; i<=n; ++i) a[i].se=read(), tmp[++nt]=a[i].se;
-	sort(a+1, a+n+1), sort(tmp+1, tmp+nt+1), nt=unique(tmp+1, tmp+nt+1)-(tmp+1);
-	for (int i=1; i<=n; ++i) d[i]=lower_bound(tmp+1, tmp+nt+1, a[i].se)-tmp;
-	for (int i=n; i; --i) {
-		ans=(ans+t.query(d[i]-1))%mod;
-		t.modify(d[i], 1);
-	}
+	for (int i=1; i<=n; ++i) a[i]=read(), tmp[++nt]=a[i];
+	reverse(a+1, a+n+1), sort(tmp+1, tmp+nt+1), nt=unique(tmp+1, tmp+nt+1)-(tmp+1);
+	for (int i=1; i<=n; ++i) a[i]=lower_bound(tmp+1, tmp+nt+1, a[i])-tmp;
+	for (int i=n; i; --i) ans+=t.query(a[i]-1), t.modify(a[i], 1);
 	printf("%d\n", ans);
 	return 0;
 }
