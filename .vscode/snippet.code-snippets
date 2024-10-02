@@ -43,5 +43,18 @@
 			""
 		],
 		"description": "A standard template with common header files and fast reading code."
+	},
+	"Get a Random Number": {
+		"scope": "cpp",
+		"prefix": "GetRand",
+		"body": [
+			"#include <random>",
+			"random_device seedEngine;",
+			"mt19937 randEngine(seedEngine());",
+			"int get(int l, int r) {",
+			"\treturn (randEngine())%(r-l+1)+l;",
+			"}"
+		],
+		"description": "Gets a 32-bit integer random number."
 	}
 }

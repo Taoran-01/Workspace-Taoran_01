@@ -25,6 +25,10 @@
 	"git.confirmSync": false,
 	"files.associations": {
 		"*.tcc": "cpp",
-		"list": "cpp"
+		"list": "cpp",
+		"chrono": "cpp",
+		"iostream": "cpp",
+		"tuple": "cpp",
+		"utility": "cpp"
 	},
 }

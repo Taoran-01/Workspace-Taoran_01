@@ -34,7 +34,9 @@ signed main() {
 	for (int i=1; i<=n; ++i) a[i]=read(), tmp[++nt]=a[i];
 	reverse(a+1, a+n+1), sort(tmp+1, tmp+nt+1), nt=unique(tmp+1, tmp+nt+1)-(tmp+1);
 	for (int i=1; i<=n; ++i) a[i]=lower_bound(tmp+1, tmp+nt+1, a[i])-tmp;
-	for (int i=n; i; --i) ans+=t.query(a[i]-1), t.modify(a[i], 1);
+	for (int i=n; i; --i) {
+		ans+=t.query(a[i]-1), t.modify(a[i], 1);
+	}
 	printf("%d\n", ans);
 	return 0;
 }
