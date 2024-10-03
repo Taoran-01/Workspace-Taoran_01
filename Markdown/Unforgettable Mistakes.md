@@ -102,3 +102,13 @@ node operator+(node a, node b) {
 ```cpp
 sort(a+1, a+n+1), nt=unique(tmp+1, tmp+nt+1)-(tmp+1);
 ```
+
+---
+### 0x10 醉眼朦胧
+多测，无答案输出 `-1`。
+```cpp
+if (abs(cnt-(n-cnt))>1) return -1; // 原来的代码
+if (abs(cnt-(n-cnt))>1) {puts("-1"); continue;} // 正确代码
+```
+RE 0pts  
+$\texttt{tmc}$：这是被几餐了吧才能写出来。

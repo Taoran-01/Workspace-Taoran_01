@@ -2,7 +2,7 @@
 #include <cstdio>
 #include <cstring>
 #include <iostream>
-#include <algorithm>
+// #include <algorithm>
 using namespace std;
 typedef long long ll;
 
@@ -17,26 +17,29 @@ inline ll read() {
 }
 
 #define N 500010
-int n; ll ans;
+int n;
 int a[N];
-int tmp[N], nt;
 
-template <typename T> struct BIT {
-	T c[N]; int lowbit(int x) {return x&(~x+1);}
-	void modify(int x, T k) {while (x<=n) c[x]=c[x]+k, x+=lowbit(x);}
-	T g(int x) {T ans=T(); while (x>0) ans=ans+c[x], x-=lowbit(x); return ans;}
-	T query(int x) {return g(x);} T query(int l, int r) {return g(r)-g(l-1);}
-}; BIT<ll> t;
+ll msort(int a[], int l, int r) { // Merge sort in [l,r].
+	if (l==r) return 0; int mid=l+r>>1;
+	ll res=msort(a, l, mid)+msort(a, mid+1, r);
+	int tmp[r-l+1]; memcpy(tmp, a+l, sizeof(int)*(r-l+1));
+	int i=l, j=mid+1, k=0;
+	while (i<=mid&&j<=r) {
+		if (a[i]<=a[j]) tmp[k++]=a[i++];
+		else tmp[k++]=a[j++], res+=mid-i+1;
+	}
+	while (i<=mid) tmp[k++]=a[i++];
+	while (j<=r) tmp[k++]=a[j++];
+	memcpy(a+l, tmp, sizeof(int)*(r-l+1));
+	return res;
+}
 
 signed main() {
 	freopen("P1774_1.in", "r", stdin);
 	n=read();
-	for (int i=1; i<=n; ++i) a[i]=read(), tmp[++nt]=a[i];
-	reverse(a+1, a+n+1), sort(tmp+1, tmp+nt+1), nt=unique(tmp+1, tmp+nt+1)-(tmp+1);
-	for (int i=1; i<=n; ++i) a[i]=lower_bound(tmp+1, tmp+nt+1, a[i])-tmp;
-	for (int i=n; i; --i) {
-		ans+=t.query(a[i]-1), t.modify(a[i], 1);
-	}
-	printf("%d\n", ans);
+	for (int i=1; i<=n; ++i) a[i]=read();
+	// reverse(a+1, a+n+1);
+	printf("%lld\n", msort(a, 1, n));
 	return 0;
 }

@@ -46,7 +46,7 @@
 	},
 	"Get a Random Number": {
 		"scope": "cpp",
-		"prefix": "GetRand",
+		"prefix": "RAND",
 		"body": [
 			"#include <random>",
 			"random_device seedEngine;",
@@ -56,5 +56,16 @@
 			"}"
 		],
 		"description": "Gets a 32-bit integer random number."
+	},
+	"Fast Power": {
+		"scope": "cpp",
+		"prefix": "QPOW",
+		"body": [
+			"ll qpow(ll a, ll b) {",
+			"\tll res=1;",
+			"\twhile (b) {if (b&1) res=res*a%mod; a=a*a%mod, b>>=1;}",
+			"\treturn res;",
+			"}",
+		]
 	}
 }

@@ -21,14 +21,17 @@
 	"code-runner.executorMap": {
 		"cpp": "cd $dir && g++ \"$fileName\" -std=c++14 -o \"$fileNameWithoutExt\" && \"$fileNameWithoutExt\" && del \"$fileNameWithoutExt.exe\"",
 	},
-	"git.enableSmartCommit": true,
 	"git.confirmSync": false,
+	"git.decorations.enabled": false,
+	"git.enableSmartCommit": true,
 	"files.associations": {
 		"*.tcc": "cpp",
 		"list": "cpp",
 		"chrono": "cpp",
 		"iostream": "cpp",
 		"tuple": "cpp",
-		"utility": "cpp"
+		"utility": "cpp",
+		"bitset": "cpp",
+		"string_view": "cpp"
 	},
 }
