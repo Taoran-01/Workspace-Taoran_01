@@ -104,7 +104,7 @@ sort(a+1, a+n+1), nt=unique(tmp+1, tmp+nt+1)-(tmp+1);
 ```
 
 ---
-### 0x10 醉眼朦胧
+### 0x0A 醉眼朦胧
 多测，无答案输出 `-1`。
 ```cpp
 if (abs(cnt-(n-cnt))>1) return -1; // 原来的代码
@@ -114,10 +114,22 @@ RE 0pts
 $\texttt{tmc}$：这是被几餐了吧才能写出来。
 
 ---
-### 0x1A 昏聩无能
+### 0x0B 昏聩无能
 以第二元素为第一关键字升序排序 `pair` 数组。
 ```cpp
 pii a[N]; int d[N]; // 2nd key compare (below)
 bool cmp(pii a, pii b) {return a.se<b.se?a.se<b.se:a.fi<b.fi;} // 原代码
 bool cmp(pii a, pii b) {return a.se==b.se?a.fi<b.fi:a.se<b.se;} // 正确代码
+```
+
+---
+### 0x0C 迟眉钝眼
+RE，调了半个月，在同学的建议下开 `-Wall -Wextra` 后问题显现。
+```cpp
+int query(int l, int r, int p, int k) {
+	if (k>t[p].d) return -1; if (l==r) return idx[l];
+	if (t[p].ls&&t[t[p].ls].d>=k) return query(l, mid, t[p].ls, k);
+	else return query(mid+1, r, t[p].rs, k-t[t[p].ls].d);
+} int query(int p, int k) {query(1, n, p, k);} // 原代码
+int query(int p, int k) {return query(1, n, p, k);} // 正确代码
 ```

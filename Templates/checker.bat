@@ -41,5 +41,6 @@ if %ERRORLEVEL%==0 (
 )
 
 del %p1% && del %p2% && del %p3%
+fc %f2% %f3%
 
 pause

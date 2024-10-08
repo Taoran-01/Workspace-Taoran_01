@@ -15,23 +15,18 @@ inline ll read() {
 	return x*f;
 }
 
-#define N 4000010
-#define INF 0x7f7f7f7f
-int n, mn, mx, ans;
-int a[N], b[N], c[N];
+#define N 100010
+#define M 5010
+int n, m1, m2;
+struct node {int l, r;} d1[M], d2[M];
+bool operator<(node a, node b) {return a.r==b.r?a.r<b.r:a.l<b.l;}
+bool cmp(node a, node b) {return a.l<b.l;}
 
 signed main() {
-	// freopen("P8446.in", "r", stdin);
-	n=read(), mn=INF, mx=-INF, ans=-INF;
-	for (int i=1; i<=n; ++i) a[i]=read(), b[i]=a[i]-i, c[i]=a[i]+i;
-	for (int i=1; i<=n; ++i) {
-		mn=min(mn, b[i]);
-		ans=max(ans, b[i]-mn-1);
-	}
-	for (int i=1; i<=n; ++i) {
-		mx=max(mx, c[i]);
-		ans=max(ans, mx-c[i]-1);
-	}
-	printf("%d\n", ans);
+	freopen("P7913_1.in", "r", stdin);
+	freopen("P7913.out", "w", stdout);
+	n=read(), m1=read(), m2=read();
+	for (int i=1; i<=m1; ++i) {int l=read(), r=read(); d1[i]={l,r};}
+	for (int i=1; i<=m2; ++i) {int l=read(), r=read(); d2[i]={l,r};}
 	return 0;
 }
