@@ -65,7 +65,17 @@
 			"\tll res=1;",
 			"\twhile (b) {if (b&1) res=res*a%mod; a=a*a%mod, b>>=1;}",
 			"\treturn res;",
-			"}",
+			"}"
+		]
+	},
+	"Pair": {
+		"scope": "cpp",
+		"prefix": "PAIR",
+		"body": [
+			"typedef pair<int,int> pii;",
+			"#define fi first",
+			"#define se second",
+			"#define mp make_pair"
 		]
 	}
 }
