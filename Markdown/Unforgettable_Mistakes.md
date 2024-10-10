@@ -133,3 +133,7 @@ int query(int l, int r, int p, int k) {
 } int query(int p, int k) {query(1, n, p, k);} // 原代码
 int query(int p, int k) {return query(1, n, p, k);} // 正确代码
 ```
+
+---
+### 0x0D 气急败坏
+尝试删除文件夹，但因文件占用删除失败。上网搜寻解决方法，多次尝试无效。最后发现是 VSCode 中的 Terminal 没有关掉。
