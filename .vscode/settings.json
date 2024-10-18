@@ -19,7 +19,7 @@
 	"print.editorTitleMenuButtonPreview": false,
 	"print.editorTitleMenuButtonPrint": false,
 	"code-runner.executorMap": {
-		"cpp": "cd $dir && g++ \"$fileName\" -std=c++14 -Wall -Wextra -Wl,--stack=2147483647 -o \"$fileNameWithoutExt\" && \"$fileNameWithoutExt\" && del \"$fileNameWithoutExt.exe\"",
+		"cpp": "cd $dir && g++ \"$fileName\" -std=c++14 -O2 -Wall -Wextra -Wl,--stack=2147483647 -o \"$fileNameWithoutExt\" && \"$fileNameWithoutExt\"",
 	},
 	"git.confirmSync": false,
 	"git.decorations.enabled": false,
