@@ -1,0 +1,4 @@
+A.P3522 [POI2011] TEM-Temperature	#2164. 「POI2011 R2 Day2」气温 Temperature
+B.P3518 [POI2011] SEJ-Strongbox	#2160. 「POI2011 R2 Day0」保险箱 Strongbox
+C.P3823 [NOI2017] 蚯蚓排队	#2303. 「NOI2017」蚯蚓排队
+D.P2322 [HNOI2006] 最短母串问题	#10061. 「一本通 2.4 练习 4」最短母串
