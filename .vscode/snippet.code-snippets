@@ -44,6 +44,33 @@
 		],
 		"description": "A standard template with common header files and fast reading code."
 	},
+	"Fast Output": {
+		"scope": "cpp",
+		"prefix": "WRITE",
+		"body": [
+			"void write(const char* s) {while (*s) putchar(*s++);}",
+			"template <typename T> void write(T x) {",
+			"\tif (x<0) return putchar('-'), write(-x);",
+			"\tif (x==0) return putchar('0'), void();",
+			"\tchar d[20]={}; int idx=0;",
+			"\twhile (x>0) d[++idx]=x%10+48, x/=10;",
+			"\twhile (idx) putchar(d[idx--]);",
+			"}",
+			"template<typename T, typename... Args>",
+			"void write(const T& fst, const Args&... args) {",
+			"\twrite(fst); write(args...);",
+			"}"
+		]
+	},
+	"Get the Current Running Time": {
+		"scope": "cpp",
+		"prefix": "TIME",
+		"body": [
+			"#include <ctime>",
+			"int stt=clock();",
+			"// printf(\"Line #%d: %.2fs\n\", __LINE__, 1.0*(clock()-stt)/CLOCKS_PER_SEC); //"
+		]
+	},
 	"Get a Random Number": {
 		"scope": "cpp",
 		"prefix": "RAND",

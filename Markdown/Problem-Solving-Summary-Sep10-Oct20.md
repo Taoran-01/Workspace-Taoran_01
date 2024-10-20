@@ -1,4 +1,4 @@
-<!-- 做题总结 24-09-10 至 24-10-09 -->
+<!-- 做题总结 24-09-10 至 24-10-20 -->
 
 ---
 ### 并不简单的简单题
@@ -376,6 +376,10 @@ signed main() {
 
 单点修改区间查询最大子段和。
 
+问题形式：序列，单点修改，区间查询；
+信息合并条件：最优端点决策有限。
+考虑维护靠左、靠右和子区间答案三个信息，可以满足信息封闭。
+
 ---
 ### 动态规划
 #### T1
@@ -566,3 +570,72 @@ $X_{n+1} = (aX_n + c) \bmod m$，要求计算并输出 $X_n \bmod g$ 的值。
 [洛谷P4427](https://www.luogu.com.cn/problem/P4427) [BJOI2018] 求和
 
 给定一棵根树，求路径上所有节点深度的 $k$ 次方和，节点深度定义为到根的边数。输入包含树的节点数和边，询问包含节点对及幂次，输出每次询问结果对 $998244353$ 取模。
+
+#### T
+[洛谷P2680](https://www.luogu.com.cn/problem/P2680) [NOIP2015 提高组] 运输计划
+
+在一个星球系统中，有多个星球和航道连接，航道之间的旅行时间不同。一个物流公司有多个运输计划，需要在最短时间内完成这些计划。公司可以选择将一条航道改造成虫洞，使用虫洞旅行将不消耗时间。任务是找出在选择一条航道作为虫洞后，完成所有运输计划所需的最短时间。输入包括星球数量、航道信息及运输计划，输出为最短完成时间的整数值。
+
+#### T
+[CF173B](https://codeforces.com/contest/173/problem/B) Chamber of Secrets | [洛谷](https://www.luogu.com.cn/problem/CF173B)
+
+给定一个 $n\times m$ 的矩形网格，部分单元格有柱子。光线可以穿过柱子，但施法后柱子能将光线反射向四个方向。蛇怪位于右下角，向左凝视，进入密室的人需朝其移动方向看。求施法的最小柱子数量，确保无法进入密室；若不可能，则输出 $-1$。
+
+#### T
+[CF325B](https://codeforces.com/contest/325/problem/B) Stadium and Games | [洛谷](https://www.luogu.com.cn/problem/CF325B)
+
+有若干队伍参加足球赛。队伍数量为偶数时，两两配对进行淘汰赛；为奇数时，若剩一队，则比赛结束；若剩多队，则进行单循环赛。给定比赛场数 $n$，求可能的队伍数并升序输出，若无解，则输出 $-1$。
+
+#### T
+[CF358D](https://codeforces.com/contest/538/problem/D) Weird Chess | [洛谷](https://www.luogu.com.cn/problem/CF538D)
+
+在一个 $n\times n$ 的棋盘上，棋子只能按照给定的移动向量移动。已知棋盘上棋子的分布，求能否恢复可能的移动向量，并输出该向量的描述；若不可能，则输出 `NO`。
+
+#### T
+[CF1637D](https://codeforces.com/contest/1637/problem/D) Yet Another Minimization Problem | [洛谷](https://www.luogu.com.cn/problem/CF1637D)
+
+给定两个长度为 $n$ 的数组 $a$ 和 $b$，可交换其中任意元素。定义数组的权值为所有元素对和的平方和，目标是最小化两个数组的总权值。输出最小可能的总权值。
+
+#### T
+[CF1479B1](https://codeforces.com/contest/1479/problem/B1) Painting the Array I | [洛谷](https://www.luogu.com.cn/problem/CF1479B1)
+
+给定一个数组 $a$ 和一个二进制数组 $b$，将 $a_i$ 染为 $b_i$ 色，求最大化被染成 $0$ 和 $1$ 的数组的分段数之和。输出最大分段数。
+
+#### T
+[CF1891F](https://codeforces.com/contest/1891/problem/F) A Growing Tree | [洛谷](https://www.luogu.com.cn/problem/CF1891F)
+
+给定一棵树，初始只含一个节点，编号为 $1$，初始权值为 $0$，设树的大小为 $\text{sz}$。$q$ 次操作，每次：
+- `1 x`：在 $x$ 下挂一个节点，编号为 $\text{sz}+1$，初始权值为 $0$。
+- `2 x v`：将当前 $x$ 子树中节点的权值加上 $v$。
+    
+求所有操作完成后每个节点的点权。
+
+#### T
+[CF1473E](https://codeforces.com/contest/1473/problem/E) Minimum Path | [洛谷](https://www.luogu.com.cn/problem/CF1473E)
+
+给定一个含有 $n$ 个顶点和 $m$ 条边的带权无向图，要求计算从顶点 $1$ 到每个顶点 $i$ 的最小路径权值。路径权值定义为边权和减去最大边权再加上最小边权。
+
+#### T
+[CF1383A](https://codeforces.com/contest/1383/problem/A) String Transformation 1 | [洛谷](https://www.luogu.com.cn/problem/CF1383A)
+
+给定两个相同长度的字符串 $A$ 和 $B$，每次可以选择相同字母 $x$ 变为严格大于 $x$ 的字母 $y$。求将 $A$ 变为 $B$ 的最少操作次数或判断是否无法完成。
+
+#### T
+[CF471D](https://codeforces.com/contest/471/problem/D) MUH and Cube Walls | [洛谷](https://www.luogu.com.cn/problem/CF471D)
+
+给定两堵墙，分别由 $n$ 和 $w$ 个塔构成，求出墙中与 $b$ 墙顶部形状相同的连续区间的数量。
+
+#### T
+[CF1506G](https://codeforces.com/contest/1506/problem/G) Maximize the Remaining String | [洛谷](https://www.luogu.com.cn/problem/CF1506G)
+
+给定一个字符串 $s$，通过删除字符和复制字符串的方式，使得最终字符串 $t$ 中每种字符只保留一个，并且最大化其字典序。输出可以得到的字典序最大字符串。
+
+#### T
+[CF1537E2](https://codeforces.com/contest/1537/problem/E2) Erase and Extend (Hard Version) | [洛谷](https://www.luogu.com.cn/problem/CF1537E2)
+
+给定字符串 $s$，可以删除最后一个字符或将字符串复制，求字典序最小的长度为 $k$ 的字符串。
+
+#### T
+[CF1800E2](https://codeforces.com/contest/1800/problem/E2) Unforgivable Curse (hard version) | [洛谷](https://www.luogu.com.cn/problem/CF1800E2)
+
+给定两个字符串 $s_1$ 和 $s_2$ 以及一个整数 $k$，可以在距离为 $k$ 或 $k+1$ 的位置交换字符。判断最终能否将 $s_1$ 和 $s_2$ 变为相同的字符串。

@@ -24,6 +24,12 @@
 	"git.confirmSync": false,
 	"git.decorations.enabled": false,
 	"git.enableSmartCommit": true,
+	"[plaintext]": {
+		"editor.wordWrap": "on"
+	},
+	"[markdown]": {
+		"editor.wordWrap": "on"
+	},
 	"files.associations": {
 		"*.tcc": "cpp",
 		"list": "cpp",
