@@ -1,0 +1,313 @@
+I have the following competitive programming problem that I want to show someone else. I will describe the problem below, please translate it into a brief description.
+
+Strip off all the stories, legends, characters, backgrounds, examples, well-known definitions etc. from the statement while still enabling everyone to understand the problem. Also remove the name of the character if applicable. If it is not in Chinese translate it. Make it as succinct as possible while still being understandable. Try to avoid formulas and symbols. Abstract freely - for example, if the problem is about buying sushi, you can just phrase it as a knapsack problem. If necessary, mathjax ($...$) for math. Provide the *succinct* simplified statement directly without jargon. Answer me in Chinese Simplified.
+
+翻译以下**全部 5 个**问题。
+
+I.
+======
+
+# [USACO15OPEN] Palindromic Paths G
+
+## 题目描述
+
+Farmer John's farm is in the shape of an $N \times N$ grid of fields ($1 \le N \le 500$), each labeled with a letter in the alphabet.  For example:
+
+```cpp
+ABCD
+BXZX
+CDXB
+WCBA
+```
+Each day, Bessie the cow walks from the upper-left field to the lower-right field, each step taking her either one field to the right or one field downward. Bessie keeps track of the string that she generates during this process, built from the letters she walks across.  She gets very disoriented, however, if this string is a palindrome (reading the same forward as backward), since she gets confused about which direction she had walked.   Please help Bessie determine the number of distinct routes she can take that  correspond to palindromes.  Different ways of obtaining the same palindrome count multiple times.  Please print your answer modulo 1,000,000,007.
+
+农夫 FJ 的农场是一个 $N\times N$ 的正方形矩阵（$2\le N\le 500$），每一块用一个字母作标记。比如说：
+
+```cpp
+ABCD 
+BXZX 
+CDXB 
+WCBA 
+```
+
+某一天，FJ 从农场的左上角走到右下角，当然啦，每次他只能往右或者往下走一格。FJ 把他走过的路径记录下来。现在，请你把他统计一下，所有路径中，回文串的数量（从前往后读和从后往前读一模一样的字符串称为回文串）。
+
+## 输入格式
+
+The first line of input contains $N$, and the remaining $N$ lines contain the
+
+$N$ rows of the grid of fields.  Each row contains $N$ characters that are
+
+in the range A..Z.
+
+第一行包括一个整数 $N$，表示农场的大小，接下来输入一个 $N\times N$ 的字母矩阵。
+
+## 输出格式
+
+Please output the number of distinct palindromic routes Bessie can take,
+
+modulo 1,000,000,007.
+
+输出一个整数，表示回文串的数量。
+
+## 样例 #1
+
+### 样例输入 #1
+
+```
+4
+ABCD
+BXZX
+CDXB
+WCBA
+```
+
+### 样例输出 #1
+
+```
+12
+```
+
+## 提示
+
+Bessie can make the following palindromes
+
+1 x "ABCDCBA"
+
+1 x "ABCWCBA"
+
+6 x "ABXZXBA"
+
+4 x "ABXDXBA"
+
+======
+
+II.
+======
+
+# 樱花
+
+## 题目背景
+
+《爱与愁的故事第四弹·plant》第一章。
+
+## 题目描述
+
+爱与愁大神后院里种了 $n$ 棵樱花树，每棵都有美学值 $C_i(0 \le C_i \le 200)$。爱与愁大神在每天上学前都会来赏花。爱与愁大神可是生物学霸，他懂得如何欣赏樱花：一种樱花树看一遍过，一种樱花树最多看 $P_i(0 \le P_i \le 100)$ 遍，一种樱花树可以看无数遍。但是看每棵樱花树都有一定的时间 $T_i(0 \le T_i \le 100)$。爱与愁大神离去上学的时间只剩下一小会儿了。求解看哪几棵樱花树能使美学值最高且爱与愁大神能准时（或提早）去上学。
+
+## 输入格式
+
+共 $n+1$行：
+
+第 $1$ 行：现在时间 $T_s$（几时：几分），去上学的时间 $T_e$（几时：几分），爱与愁大神院子里有几棵樱花树 $n$。这里的 $T_s$，$T_e$ 格式为：`hh:mm`，其中 $0 \leq hh \leq 23$，$0 \leq mm \leq 59$，且 $hh,mm,n$ 均为正整数。
+
+第 $2$ 行到第 $n+1$ 行，每行三个正整数：看完第 $i$ 棵树的耗费时间 $T_i$，第 $i$ 棵树的美学值 $C_i$，看第 $i$ 棵树的次数 $P_i$（$P_i=0$ 表示无数次，$P_i$ 是其他数字表示最多可看的次数 $P_i$）。
+
+## 输出格式
+
+只有一个整数，表示最大美学值。
+
+## 样例 #1
+
+### 样例输入 #1
+
+```
+6:50 7:00 3
+2 1 0
+3 3 1
+4 5 4
+```
+
+### 样例输出 #1
+
+```
+11
+```
+
+## 提示
+
+$100\%$ 数据：$T_e-T_s \leq 1000$（即开始时间距离结束时间不超过 $1000$ 分钟），$n \leq 10000$。保证 $T_e,T_s$ 为同一天内的时间。
+
+样例解释：赏第一棵樱花树一次，赏第三棵樱花树 $2$ 次。
+
+======
+
+III.
+======
+
+# [NOIP2006 提高组] 金明的预算方案
+
+## 题目描述
+
+金明今天很开心，家里购置的新房就要领钥匙了，新房里有一间金明自己专用的很宽敞的房间。更让他高兴的是，妈妈昨天对他说：“你的房间需要购买哪些物品，怎么布置，你说了算，只要不超过 $n$ 元钱就行”。今天一早，金明就开始做预算了，他把想买的物品分为两类：主件与附件，附件是从属于某个主件的，下表就是一些主件与附件的例子：
+
+| 主件 | 附件 |
+| :----------: | :----------: |
+| 电脑 | 打印机，扫描仪 |
+| 书柜 | 图书 |
+| 书桌 | 台灯，文具 |
+| 工作椅 | 无 |
+
+如果要买归类为附件的物品，必须先买该附件所属的主件。每个主件可以有 $0$ 个、$1$ 个或 $2$ 个附件。每个附件对应一个主件，附件不再有从属于自己的附件。金明想买的东西很多，肯定会超过妈妈限定的 $n$ 元。于是，他把每件物品规定了一个重要度，分为 $5$ 等：用整数 $1 \sim 5$ 表示，第 $5$ 等最重要。他还从因特网上查到了每件物品的价格（都是 $10$ 元的整数倍）。他希望在不超过 $n$ 元的前提下，使每件物品的价格与重要度的乘积的总和最大。
+
+设第 $j$ 件物品的价格为 $v_j$，重要度为 $w_j$，共选中了 $k$ 件物品，编号依次为 $j_1,j_2,\dots,j_k$，则所求的总和为：
+
+$$v_{j_1} \times w_{j_1}+v_{j_2} \times w_{j_2}+ \dots +v_{j_k} \times w_{j_k}$$
+
+请你帮助金明设计一个满足要求的购物单。
+
+## 输入格式
+
+第一行有两个整数，分别表示总钱数 $n$ 和希望购买的物品个数 $m$。
+
+第 $2$ 到第 $(m + 1)$ 行，每行三个整数，第 $(i + 1)$ 行的整数 $v_i$，$p_i$，$q_i$ 分别表示第 $i$ 件物品的价格、重要度以及它对应的的主件。如果 $q_i=0$，表示该物品本身是主件。
+
+## 输出格式
+
+输出一行一个整数表示答案。
+
+## 样例 #1
+
+### 样例输入 #1
+
+```
+1000 5
+800 2 0
+400 5 1
+300 5 1
+400 3 0
+500 2 0
+```
+
+### 样例输出 #1
+
+```
+2200
+```
+
+## 提示
+
+#### 数据规模与约定
+
+对于全部的测试点，保证 $1 \leq n \leq 3.2 \times 10^4$，$1 \leq m \leq 60$，$0 \leq v_i \leq 10^4$，$1 \leq p_i \leq 5$，$0 \leq q_i \leq m$，答案不超过 $2 \times 10^5$。
+
+NOIP 2006 提高组 第二题
+
+======
+
+IV.
+======
+
+# [APIO2009] 抢掠计划
+
+## 题目描述
+
+Siruseri 城中的道路都是单向的。不同的道路由路口连接。按照法律的规定，在每个路口都设立了一个 Siruseri 银行的 ATM 取款机。令人奇怪的是，Siruseri 的酒吧也都设在路口，虽然并不是每个路口都设有酒吧。  
+
+Banditji 计划实施 Siruseri 有史以来最惊天动地的 ATM 抢劫。他将从市中心出发，沿着单向道路行驶，抢劫所有他途径的 ATM 机，最终他将在一个酒吧庆祝他的胜利。  
+
+使用高超的黑客技术，他获知了每个 ATM 机中可以掠取的现金数额。他希望你帮助他计算从市中心出发最后到达某个酒吧时最多能抢劫的现金总数。他可以经过同一路口或道路任意多次。但只要他抢劫过某个 ATM 机后，该 ATM 机里面就不会再有钱了。 例如，假设该城中有 $6$ 个路口，道路的连接情况如下图所示：  
+
+![](https://cdn.luogu.com.cn/upload/pic/4396.png)  
+
+市中心在路口 $1$，由一个入口符号 → 来标识，那些有酒吧的路口用双圈来表示。每个 ATM 机中可取的钱数标在了路口的上方。在这个例子中，Banditji 能抢劫的现金总数为 $47$，实施的抢劫路线是：$1-2-4-1-2-3-5$。
+
+## 输入格式
+
+第一行包含两个整数 $N,M$。$N$ 表示路口的个数，$M$ 表示道路条数。  
+
+接下来 $M$ 行，每行两个整数，这两个整数都在 $1$ 到 $N$ 之间，第 $i+1$ 行的两个整数表示第 $i$ 条道路的起点和终点的路口编号。  
+
+接下来 $N$ 行，每行一个整数，按顺序表示每个路口处的 ATM 机中的钱数 $a_i$。  
+
+接下来一行包含两个整数 $S,P$，$S$ 表示市中心的编号，也就是出发的路口。$P$ 表示酒吧数目。  
+
+接下来的一行中有 $P$ 个整数，表示 $P$ 个有酒吧的路口的编号。
+
+## 输出格式
+
+输出一个整数，表示 Banditji 从市中心开始到某个酒吧结束所能抢劫的最多的现金总数。
+
+## 样例 #1
+
+### 样例输入 #1
+
+```
+6 7 
+1 2 
+2 3 
+3 5 
+2 4 
+4 1 
+2 6 
+6 5 
+10 
+12 
+8 
+16 
+1 
+5 
+1 4 
+4 3 5 6
+```
+
+### 样例输出 #1
+
+```
+47
+```
+
+## 提示
+
+对于 $50\%$ 的数据，保证 $N, M \le 3000$。  
+
+对于 $100\%$ 的数据，保证 $N, M \le 5\times 10^5$，$0 \le a_i \le 4000$。保证可以从市中心沿着 Siruseri 的单向的道路到达其中的至少一个酒吧。
+
+======
+
+V.
+======
+
+# [HAOI2010] 软件安装
+
+## 题目描述
+
+现在我们的手头有 $N$ 个软件，对于一个软件 $i$，它要占用 $W_i$ 的磁盘空间，它的价值为 $V_i$。我们希望从中选择一些软件安装到一台磁盘容量为 $M$ 计算机上，使得这些软件的价值尽可能大（即 $V_i$ 的和最大）。
+
+但是现在有个问题：软件之间存在依赖关系，即软件 $i$ 只有在安装了软件 $j$（包括软件 $j$ 的直接或间接依赖）的情况下才能正确工作（软件 $i$ 依赖软件 $j$)。幸运的是，一个软件最多依赖另外一个软件。如果一个软件不能正常工作，那么它能够发挥的作用为 $0$。
+
+
+我们现在知道了软件之间的依赖关系：软件 $i$ 依赖软件 $D_i$。现在请你设计出一种方案，安装价值尽量大的软件。一个软件只能被安装一次，如果一个软件没有依赖则 $D_i=0$，这时只要这个软件安装了，它就能正常工作。
+
+## 输入格式
+
+第 1 行：$N,M(0\leq N\leq 100, 0\leq M\leq 500)$
+
+第 2 行：$W_1,W_2, ... W_i, ..., W_n (0\leq W_i\leq M)$
+
+第 3 行：$V_1, V_2, ..., V_i, ..., V_n  (0\leq V_i\leq 1000)$
+
+第 4 行：$D_1, D_2, ..., D_i, ..., D_n (0\leq D_i\leq N, D_i≠i)$
+
+## 输出格式
+
+一个整数，代表最大价值。
+
+## 样例 #1
+
+### 样例输入 #1
+
+```
+3 10
+5 5 6
+2 3 4
+0 1 1
+```
+
+### 样例输出 #1
+
+```
+5
+```
+
+======

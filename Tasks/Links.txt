@@ -1,0 +1,7 @@
+https://www.luogu.com.cn/problem/list?tag=342,83%7C3%7C61,60,59,58,37,36,35,34,33,32,31,30,29,28,27&page=1
+https://www.luogu.com.cn/problem/list?tag=28,29,30,31,32,33,34,35%7C83&difficulty=5&page=1
+https://oi-wiki.org/math/probability/exp-var/
+https://oi-wiki.org/dp/probability/
+https://www.luogu.com.cn/problem/P7771
+https://www.luogu.com.cn/article/kv9n9167
+https://www.cnblogs.com/alex-wei/p/basic_graph_theory.html

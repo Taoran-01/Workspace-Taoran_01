@@ -1,0 +1,142 @@
+{
+	// Place your Workspace-Taoran_01 workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Cpp Standard Template": {
+		"scope": "cpp",
+		"prefix": "cppStdTemplate",
+		"body": [
+			"#include <cmath>",
+			"#include <cstdio>",
+			"#include <cstring>",
+			"#include <iostream>",
+			"using namespace std;",
+			"typedef long long ll;",
+			"",
+			"inline ll read() {",
+			"\tll x=0, f=1; char ch=getchar();",
+			"\twhile (ch<'0'||ch>'9') {if (ch=='-') f=-1; ch=getchar();}",
+			"\twhile (ch>='0'&&ch<='9') x=(x<<1)+(x<<3)+(ch^48), ch=getchar();",
+			"\treturn x*f;",
+			"}",
+			"",
+			"signed main() {",
+			"\tfreopen(\"a.in\", \"r\", stdin);",
+			"\treturn 0;",
+			"}",
+			""
+		],
+		"description": "A standard template with common header files and fast reading code."
+	},
+	"Fast Output": {
+		"scope": "cpp",
+		"prefix": "WRITE",
+		"body": [
+			"void write(const char* s) {while (*s) putchar(*s++);}",
+			"template <typename T> void write(T x) {",
+			"\tif (x<0) return putchar('-'), write(-x);",
+			"\tif (x==0) return putchar('0'), void();",
+			"\tchar d[20]={}; int idx=0;",
+			"\twhile (x>0) d[++idx]=x%10+48, x/=10;",
+			"\twhile (idx) putchar(d[idx--]);",
+			"}",
+			"template<typename T, typename... Args>",
+			"void write(const T& fst, const Args&... args) {",
+			"\twrite(fst); write(args...);",
+			"}"
+		]
+	},
+	"Get the Current Running Time": {
+		"scope": "cpp",
+		"prefix": "TIME",
+		"body": [
+			"#include <ctime>",
+			"int stt=clock();",
+			"#define chktim fprintf(stderr, \"Line #%d: %.2fs\\n\", \\",
+			"\t__LINE__, 1.0*(clock()-stt)/CLOCKS_PER_SEC)"
+		]
+	},
+	"Get a Random Number": {
+		"scope": "cpp",
+		"prefix": "RAND",
+		"body": [
+			"#include <random>",
+			"#include <chrono>",
+			"using namespace chrono;",
+			"mt19937 randEngine(steady_clock::now().time_since_epoch().count());",
+			"#define get(x,y) (uniform_int_distribution<>(x,y)(randEngine))"
+		],
+		"description": "Gets a 32-bit integer random number."
+	},
+	"Square": {
+		"scope": "cpp",
+		"prefix": "SQR",
+		"body": [
+			"template <typename T> T sqr(T x) {return x*x;}"
+		]
+	},
+	"Fast Power": {
+		"scope": "cpp",
+		"prefix": "QPOW",
+		"body": [
+			"ll qpow(ll a, ll b) {",
+			"\tll res=1;",
+			"\twhile (b) {if (b&1) res=res*a%mod; a=a*a%mod, b>>=1;}",
+			"\treturn res;",
+			"}"
+		]
+	},
+	"Pair": {
+		"scope": "cpp",
+		"prefix": "PAIR",
+		"body": [
+			"typedef pair<int,int> pii;",
+			"#define fi first",
+			"#define se second",
+			"#define mkp make_pair"
+		]
+	},
+	"Graph": {
+		"scope": "cpp",
+		"prefix": "GRAPH",
+		"body": [
+			"#define v e[i].to",
+			"int head[N], tot;",
+			"struct edge {int to, nxt;} e[M<<1];",
+			"void add_edge(int x, int y) {e[++tot]={y, head[x]}, head[x]=tot;}"
+		]
+	},
+	"Disjoint Set Union": {
+		"scope": "cpp",
+		"prefix": "DSU",
+		"body": [
+			"int find(int x) {return (x==fa[x]?x:fa[x]=find(fa[x]));}",
+			"void uni(int x, int y) {fa[find(x)]=find(y);}"
+		]
+	},
+	"Fenwick Tree": {
+		"scope": "cpp",
+		"prefix": "BIT",
+		"body": [
+			"template <typename T> struct BIT {",
+			"\tT c[N]; int lowbit(int x) {return x&(~x+1);}",
+			"\tvoid modify(int x, T k) {while (x<=n) c[x]=c[x]+k, x+=lowbit(x);}",
+			"\tT g(int x) {T ans=T(); while (x>0) ans=ans+c[x], x-=lowbit(x); return ans;}",
+			"\tT query(int x) {return g(x);} T query(int l, int r) {return g(r)-g(l-1);}",
+			"};"
+		]
+	}
+}

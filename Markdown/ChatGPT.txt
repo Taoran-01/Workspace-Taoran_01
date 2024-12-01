@@ -1,0 +1,30 @@
+I have the following competitive programming problem that I want to show someone else. I will describe the problem below, please translate it into a brief description.
+
+Strip off all the stories, legends, characters, backgrounds, examples, well-known definitions etc. from the statement while still enabling everyone to understand the problem. Also remove the name of the character if applicable. If it is not in Chinese translate it. Make it as succinct as possible while still being understandable. Try to avoid formulas and symbols. Abstract freely - for example, if the problem is about buying sushi, you can just phrase it as a knapsack problem. If necessary, mathjax ($...$) for math. Provide the *succinct* simplified statement directly without jargon. Answer me in Chinese Simplified.
+
+翻译以下**全部 5 个**问题。
+
+I.
+======
+
+======
+
+II.
+======
+
+======
+
+III.
+======
+
+======
+
+IV.
+======
+
+======
+
+V.
+======
+
+======

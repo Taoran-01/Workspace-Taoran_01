@@ -1,0 +1,2 @@
+Prob B: 若有特殊性质，m 范围修改为 m=1001。
+Prob C: ex_simple6.in/ans 满足子任务 5 的限制，ex_simple5.in/ans 满足子任务 6 的限制。

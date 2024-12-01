@@ -1,0 +1,8 @@
+A. CF1891F
+https://codeforces.com/problemset/problem/1891/F
+B. CF1799D2
+https://codeforces.com/problemset/problem/1799/D2
+C. ARC157D
+https://atcoder.jp/contests/arc157/tasks/arc157_d
+D. ARC179D
+https://atcoder.jp/contests/arc179/tasks/arc179_d
